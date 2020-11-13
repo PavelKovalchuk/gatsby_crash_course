@@ -1,11 +1,11 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from "react";
+import { graphql, Link } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const BlogPage = ({ data }) => {
-  console.log("BlogPage data ", data)
+  console.log("BlogPage data ", data);
   return (
     <Layout>
       <SEO title="Blog Page" />
@@ -20,16 +20,16 @@ const BlogPage = ({ data }) => {
             </small>
             <br />
             <br />
-            <Link to={post.node.frontmatter.path}>Read more</Link>
+            <Link to={`/${post.node.frontmatter.path}`}>Read more</Link>
             <br />
             <br />
             <hr />
           </div>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
@@ -47,6 +47,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default BlogPage
+export default BlogPage;
